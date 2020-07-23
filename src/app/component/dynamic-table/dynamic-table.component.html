@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="jumbotron">
+        <h1 class="display-4">{{ title }}!</h1>
+        <!-- <p class="lead">
+          This is a simple hero unit, a simple jumbotron-style component for
+          calling extra attention to featured content or information.
+        </p> -->
+      </div>
+
+      <table class="table" *ngIf="arrStudents">
+        <thead (click)="onSortClick($event)">
+          <tr>
+            <th scope="col">
+              ID
+              <!-- <i class="my-icon fa fa-chevron-up"></i> -->
+            </th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of arrStudents | orderBy: order:reverse">
+            <th scope="row">{{ student.id }}</th>
+            <td>{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.username }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

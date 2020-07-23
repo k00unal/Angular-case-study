@@ -1,0 +1,28 @@
+<div class="alert alert-success" role="alert">
+  <h1>Countdown</h1>
+  <ng-container
+    [counter]="counter"
+    [interval]="interval"
+    (value)="value = $event"
+  >
+    <h3>{{ value }}</h3>
+  </ng-container>
+
+  <label class="p-2">Count</label>
+  <input class="pr-3" type="number" [(ngModel)]="counter" />
+  <div>
+    <button
+      (click)="startTimer()"
+      class="btn btn-outline-primary"
+      type="button"
+    >
+      Start Timer
+    </button>
+    <button (click)="pauseTimer()" type="button" class="btn btn-outline-info">
+      Pause
+    </button>
+    <button (click)="stopTimer()" type="button" class="btn btn-outline-dark">
+      stop
+    </button>
+  </div>
+</div>

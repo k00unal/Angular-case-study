@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="p-4">
+        <div class="dropdown float-right pr-1">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Price filters
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" (click)="lowToHigh($event)"
+              >Low to High Price</a
+            >
+            <a class="dropdown-item" (click)="highToLow($event)"
+              >High to Low Price</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown float-right pr-1">
+          <button
+            type="button"
+            class="btn btn-outline-primary float-right"
+            (click)="isGrid = !isGrid"
+          >
+            <i class="fa fa-bars pr-2" aria-hidden="true"></i>
+            <i class="fa fa-th-large" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="cardList pt-4">
+          <ng-container *ngFor="let item of items | orderBy: order:reverse">
+            <div
+              class="main-item"
+              class="cardListItem"
+              [style.flex]="
+                isGrid ? '0 1 calc(50% - 32px)' : '0 1 calc(25% - 32px)'
+              "
+            >
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.name }}</h5>
+                  <p class="card-text">
+                    Some card's content.
+                  </p>
+                  <a class="btn btn-primary">Rs:{{ item.price }}</a>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

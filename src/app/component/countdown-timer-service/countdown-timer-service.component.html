@@ -1,0 +1,23 @@
+<app-hero name="{{ name }}"></app-hero>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">COUNTDOWN:</h1>
+    <!-- <input class="pr-3" type="number" [(ngModel)]="counter" /> -->
+    <p class="lead">{{ timerS.timeNowInMinutes }}</p>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-outline-secondary" (click)="pause()">
+        PAUSE
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-secondary"
+        (click)="resume()"
+      >
+        START/RESUME
+      </button>
+      <button type="button" class="btn btn-outline-secondary" (click)="stop()">
+        STOP
+      </button>
+    </div>
+  </div>
+</div>

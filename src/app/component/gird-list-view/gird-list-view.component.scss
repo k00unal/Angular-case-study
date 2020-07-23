@@ -1,0 +1,28 @@
+.cardList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  & > *:not(:last-child) {
+    margin-right: 32px;
+  }
+  & > * {
+    margin-bottom: 32px;
+    /* Column Gap */
+    box-sizing: border-box;
+  }
+}
+/* Item sizing */
+.cardListItem {
+  flex: 0 1 calc(25% - 32px);
+}
+.cardListItem2 {
+  flex: 0 1 calc(33.3% - 32px);
+}
+
+.main-item {
+  display: block;
+  padding: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
